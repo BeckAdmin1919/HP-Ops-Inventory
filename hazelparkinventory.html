@@ -796,7 +796,11 @@ const App = {
     it.dirty = true;
     dirty = true;
     saveMsg='';
-    render();
+    // Update save button only — re-rendering the full page would reset the input mid-typing
+    const btn = document.querySelector('.btn-primary');
+    if(btn) btn.disabled = false;
+    const ss = document.querySelector('.save-status');
+    if(ss) ss.textContent = 'Unsaved changes';
   },
   stepQty(id, delta){
     const it = findItem(id);
