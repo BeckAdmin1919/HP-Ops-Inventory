@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hazel Park Cultivation Inventory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style id="app-style"></style>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script id="state-data" type="application/json">{"items": [{"item": "Bleach drum - no deposit on drums", "vendorName": "Khemical Sodium Hypochlorite 12.5% - Liquichlor - Bleach - 55 Gallon Drum", "itemNumber": "NKH124", "category": "COGS: Supplies - Horticultural", "storage": "Mechanical Room", "parNote": "Order 1 at .50 full", "criticality": "Medium", "increment": "55 gallon drum", "threshold": 0.5, "target": 1.5, "morrPrice": 226.38, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "bleach-drum-no-deposit-on-drums", "currentQty": null, "lastCounted": null}, {"item": "Iso drum 91% - no deposit on drums", "vendorName": "Khemical Isopropyl Alcohol Technical Grade 99% NON USP NF - 55 Gallon Drum", "itemNumber": "NKH044", "category": "COGS: Supplies - Horticultural", "storage": "Girls room", "parNote": "Order 1 at .50 full", "criticality": "High", "increment": "55 gallon drum", "threshold": 0.5, "target": 1.5, "morrPrice": 463.2, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "iso-drum-91-no-deposit-on-drums", "currentQty": null, "lastCounted": null}, {"item": "Pro-Mix CX Coir Grow Bag 2 Gallon - 1240 on a pallet", "vendorName": "Pro-Mix CX Coir Grow Bag 2 Gallon", "itemNumber": "", "category": "COGS: Supplies - Medium", "storage": "Weekly backstock on Mechanical Room Cultivation Rack (Coco 1 gallons 300), backstock in Left Container", "parNote": "Buy 1240 at 1/2 pallet, 620 left", "criticality": "HIGHEST", "increment": "2 gallon coco pot", "threshold": 620, "target": 1240, "morrPrice": null, "bfgPrice": null, "otherPrice": 1.64, "usage": "300 per week", "howToOrder": "Order via Hummert from Randy Countryman - requesting pricing from Elevated 11/25", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "pro-mix-cx-coir-grow-bag-2-gallon-1240-o", "currentQty": null, "lastCounted": null}, {"item": "Magnesium (use less than a 1/2 bag per week)", "vendorName": "Haifa BitterMag - Magnesium Sulfate Heptahydrate - 9.8% Mg Horticultural Grade - 50 Pound (54/Plt)", "itemNumber": "NHC061", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room Drums, weekly backstock on rack, backstock in Left Container", "parNote": "Buy 54 bags (1 pallet), reorder 1/2 pallet at 27 bags", "criticality": "HIGHEST", "increment": "50 lb bag", "threshold": 27, "target": 54, "morrPrice": 19.5, "bfgPrice": 25.35, "otherPrice": null, "usage": "1 bag per week", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "magnesium-use-less-than-a-1-2-bag-per-we", "currentQty": null, "lastCounted": null}, {"item": "Jacks 0-12-26 (use less than 2 bags per week)", "vendorName": "Jack's Professional Nutrients 0-12-26 - 25lb", "itemNumber": "JRP79230", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room Drums, weekly backstock on rack, backstock in Left Cultivation Container", "parNote": "Buy 80 bags (1 pallet), reorder at 40 (5 bags per batch, 1 pallet = 16 batches)", "criticality": "HIGHEST", "increment": "25 lb bag", "threshold": 40, "target": 80, "morrPrice": null, "bfgPrice": 53.57, "otherPrice": null, "usage": "4 bags per week???", "howToOrder": "Order from BFG Supply Favorites List", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "jacks-0-12-26-use-less-than-2-bags-per-w", "currentQty": null, "lastCounted": null}, {"item": "Yara Calcinit (use less than 3/4 bag per week)", "vendorName": "YaraLiva Calcinit 15.5-0-0-19 CA Calcium Nitrate Greenhouse Grade - 50 Pound (42/Pallet)", "itemNumber": "NY010", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room Drums, weekly backstock on rack, backstock in Left Container", "parNote": "Buy 49 bags (1 pallet), reorder 1/2 pallet at 24 bags", "criticality": "HIGHEST", "increment": "50 lb bag", "threshold": 24, "target": 49, "morrPrice": 23.5, "bfgPrice": 25.59, "otherPrice": null, "usage": "1.5 bags per week", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "yara-calcinit-use-less-than-3-4-bag-per-", "currentQty": null, "lastCounted": null}, {"item": "AgSil 16H", "vendorName": "Potassium Silicate 0-0-32 24%SI 50Lb (40/PL)", "itemNumber": "SA16388", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room Totes, backstock Cultivation shipping container", "parNote": "Buy 2, reorder at 1", "criticality": "HIGHEST", "increment": "50 lb bag", "threshold": 1, "target": 2, "morrPrice": null, "bfgPrice": 327.86, "otherPrice": null, "usage": "3.33 lbs per week", "howToOrder": "Order from BFG Supply Favorites List", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "agsil-16h", "currentQty": null, "lastCounted": null}, {"item": "MycoApply® Endo", "vendorName": "MycoApply Ultrafine Endo - Suspendable Powder Mycorrhizal Fungi Inoculant - 20 Pounds", "itemNumber": "NMYA011", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room 5 gallon bucket - backstock Cultivation shipping container", "parNote": "Buy 2 - 40 lb bags, reorder at 1", "criticality": "??", "increment": "40 lb bag", "threshold": 1, "target": 2, "morrPrice": 300, "bfgPrice": null, "otherPrice": null, "usage": "300 Tbsp per week = Roughly 5-6 lbs per week", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "mycoapply-endo", "currentQty": null, "lastCounted": null}, {"item": "Employ", "vendorName": "a biochemical plant health promoter", "itemNumber": "", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room Grow Shelf, no backstock", "parNote": "Buy 1 8 oz. bag, reorder at 2 oz.", "criticality": "High", "increment": "oz", "threshold": 2, "target": 8, "morrPrice": null, "bfgPrice": null, "otherPrice": 88, "usage": "1.6 grams per week", "howToOrder": "Do not order, get from Plant Nerd - do not need a link to order", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "internal", "id": "employ", "currentQty": null, "lastCounted": null}, {"item": "Stimplex", "vendorName": "Stimplex Marine Plant-Based Growth Regulator 2.5 gallon jug", "itemNumber": "", "category": "COGS: Supplies - Horticultural - Fertilizer", "storage": "Mechanical Room Grow Shelf, no backstock", "parNote": "Ask Amy for more Stimplex when you get down to 12 oz.", "criticality": "Low", "increment": "oz", "threshold": 12, "target": 24, "morrPrice": null, "bfgPrice": null, "otherPrice": 138.5, "usage": "", "howToOrder": "Do not order, get from Plant Nerd - do not need a link to order", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "internal", "id": "stimplex", "currentQty": null, "lastCounted": null}, {"item": "Trellis", "vendorName": "67\" By 3280\"", "itemNumber": "", "category": "COGS: Supplies - Horticultural", "storage": "Mechanical Room, backstock Cultivation Container", "parNote": "Buy 4, reorder at 2", "criticality": "High", "increment": "net roll", "threshold": 2, "target": 4, "morrPrice": null, "bfgPrice": 270.93, "otherPrice": null, "usage": "330 feet per week", "howToOrder": "Deerbusters", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "trellis", "currentQty": null, "lastCounted": null}, {"item": "Milstop SP Foliar Fungicide 25 lb.", "vendorName": "BioWorks MilStop SP - OMRI Certified - 25 Pound", "itemNumber": "PBW052", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf", "parNote": "Buy 2 - 25 lb bags, reorder at 1", "criticality": "", "increment": "25 lb bag", "threshold": 1, "target": 2, "morrPrice": 263.22, "bfgPrice": null, "otherPrice": null, "usage": "600 ml per week = Roughly 1 1/2 lbs per week", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "milstop-sp-foliar-fungicide-25-lb", "currentQty": null, "lastCounted": null}, {"item": "Growers Ally Crop Defender", "vendorName": "Growers Ally Crop Defender 3, 2.5 Gallon", "itemNumber": "SKU: GG-670219", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 1, reorder at 1/2 left", "criticality": "", "increment": "2.5 gallon jug", "threshold": 0.5, "target": 1, "morrPrice": null, "bfgPrice": null, "otherPrice": 886.2, "usage": "", "howToOrder": "Order from Hydrobuilder", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "growers-ally-crop-defender", "currentQty": null, "lastCounted": null}, {"item": "Grandevo", "vendorName": "Marrone Bio Innovations Grandevo® CG Insecticide - 10lb", "itemNumber": "PMBI007", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Order 10 lb, reorder at 1/4", "criticality": "High", "increment": "10 lb bag", "threshold": 0.25, "target": 1, "morrPrice": 288.75, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "grandevo", "currentQty": null, "lastCounted": null}, {"item": "Suffoil X", "vendorName": "Bioworks SuffOil-X 2.5 gallon", "itemNumber": "PBW046", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock upstairs Cultivation area", "parNote": "Buy 2, reorder at 1", "criticality": "", "increment": "2.5 gallon jug", "threshold": 1, "target": 2, "morrPrice": null, "bfgPrice": null, "otherPrice": 87.5, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "suffoil-x", "currentQty": null, "lastCounted": null}, {"item": "Regalia", "vendorName": "Regalia CG 2.5Gl", "itemNumber": "PMBI004", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 2, reorder at 1", "criticality": "High", "increment": "2.5 gallon jug", "threshold": 1, "target": 2, "morrPrice": 233.75, "bfgPrice": 321.43, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "regalia", "currentQty": null, "lastCounted": null}, {"item": "Venerate", "vendorName": "Venerate CG 2.5Gl", "itemNumber": "PMBI012", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 2, reorder at 1", "criticality": "High", "increment": "2.5 gallon jug", "threshold": 1, "target": 2, "morrPrice": 273.63, "bfgPrice": 368.51, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "venerate", "currentQty": null, "lastCounted": null}, {"item": "Azaguard", "vendorName": "BioSafe AzaGuard Azadirachtin Insecticide 3% - 2.5 Gallon", "itemNumber": "PBIS029", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 1, reorder at 1/4 left", "criticality": "Low", "increment": "2.5 gallon jug", "threshold": 0.25, "target": 1, "morrPrice": 1386.25, "bfgPrice": 1637.18, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "azaguard", "currentQty": null, "lastCounted": null}, {"item": "Alligare", "vendorName": "Alligare 90 Non-Ionic Surfactant - Alkylpolyoxethylene and Humectants 100% - 2.5 Gallon", "itemNumber": "PAL006", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 1 gallon at 1/2 gallon left", "criticality": "??", "increment": "1 gallon", "threshold": 0.5, "target": 1, "morrPrice": 18.7, "bfgPrice": null, "otherPrice": null, "usage": "used with azaguard, 5 mls per gallon, 5-25 gallons as needed", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "alligare", "currentQty": null, "lastCounted": null}, {"item": "Zerotol", "vendorName": "BioSafe ZeroTol 2.0 Algaecide/Bactericide/Fungicide - 2.5 Gallon", "itemNumber": "PBIS001", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 2 - 2.5 gallons, reorder at 1 - 2.5 gallons", "criticality": "High", "increment": "2.5 gallon jug", "threshold": 1, "target": 2, "morrPrice": 93.46, "bfgPrice": 102.71, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "zerotol", "currentQty": null, "lastCounted": null}, {"item": "Botaniguard", "vendorName": "Botaniguard ES Insecticide - 1 gallon", "itemNumber": "DO NOT STOCK - BUY AS NEEDED", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": null, "parNote": "Buy as needed", "criticality": "", "increment": "1 gallon", "threshold": null, "target": null, "morrPrice": null, "bfgPrice": null, "otherPrice": 259.95, "usage": "", "howToOrder": "Order from Seed Barn", "link": null, "confidence": "as-needed", "reviewNote": "Do-not-stock item — buy as needed only, excluded from par-level ordering.", "vendorType": "other", "id": "botaniguard", "currentQty": null, "lastCounted": null}, {"item": "Pyrethin", "vendorName": "Bonide Pyrethtin Insect Spray", "itemNumber": "DO NOT STOCK - BUY AS NEEDED", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": null, "parNote": "Buy as needed", "criticality": "", "increment": "unclear increment", "threshold": null, "target": null, "morrPrice": null, "bfgPrice": null, "otherPrice": 259.95, "usage": "", "howToOrder": "HGS Hydro - if as needed - amy can price shop if we are going to stock", "link": null, "confidence": "as-needed", "reviewNote": "Do-not-stock item — buy as needed only, excluded from par-level ordering.", "vendorType": "other", "id": "pyrethin", "currentQty": null, "lastCounted": null}, {"item": "Pyganic", "vendorName": "Pyganic EC 5.0 II Insecticide - 1 gallon", "itemNumber": "DO NOT STOCK - BUY AS NEEDED", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": null, "parNote": "Buy as needed", "criticality": "", "increment": "1 gallon", "threshold": null, "target": null, "morrPrice": null, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "find where I got it last time for PN", "link": null, "confidence": "as-needed", "reviewNote": "Do-not-stock item — buy as needed only, excluded from par-level ordering.", "vendorType": "other", "id": "pyganic", "currentQty": null, "lastCounted": null}, {"item": "Gnatrol", "vendorName": "Gnatrol WDG BTI-Organic Fungus Gnat Larvicide", "itemNumber": "DO NOT STOCK - BUY AS NEEDED", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": null, "parNote": "Buy as needed", "criticality": "", "increment": "16 lbs", "threshold": null, "target": null, "morrPrice": null, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Forestry Distribution", "link": null, "confidence": "as-needed", "reviewNote": "", "vendorType": "other", "id": "gnatrol", "currentQty": null, "lastCounted": null}, {"item": "Double sided sticky traps 72pk", "vendorName": "Arable Acres Double-Sided Sticky Cards 3x5 Aphid Whitefly Yellow (Pack of 72)", "itemNumber": "GAA012", "category": "COGS: Supplies - Horticultural - IPM Inputs", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Buy 4 boxes, reorder at 2 boxes", "criticality": "Low", "increment": "box of 72 traps", "threshold": 2, "target": 4, "morrPrice": 15.13, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "double-sided-sticky-traps-72pk", "currentQty": null, "lastCounted": null}, {"item": "7.0 Calibration Solution", "vendorName": "Bluelab pH 7.0 Calibration Solution 500 mL", "itemNumber": "EBL070", "category": "COGS: Supplies - Horticultural", "storage": null, "parNote": "Buy 2 at 1 bottle", "criticality": "", "increment": "500 ml bottle", "threshold": 1, "target": 2, "morrPrice": 13.83, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "7-0-calibration-solution", "currentQty": null, "lastCounted": null}, {"item": "4.0 Calibration Solution", "vendorName": "Bluelab pH 4.0 Calibration Solution 500 mL", "itemNumber": "EBL060", "category": "COGS: Supplies - Horticultural", "storage": null, "parNote": "Buy 2 at 1 bottle", "criticality": "", "increment": "500 ml bottle", "threshold": 1, "target": 2, "morrPrice": 13.83, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "4-0-calibration-solution", "currentQty": null, "lastCounted": null}, {"item": "Conductivity Solution", "vendorName": "Bluelab 2.77 EC Conductivity Standard Solution 500 mL", "itemNumber": "EBL080", "category": "COGS: Supplies - Horticultural", "storage": null, "parNote": "Buy 2 at 1 bottle", "criticality": "", "increment": "500 ml bottle", "threshold": 1, "target": 2, "morrPrice": 13.83, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "conductivity-solution", "currentQty": null, "lastCounted": null}, {"item": "Storage Solution", "vendorName": "Bluelab pH Probe KCI Storage Solution 250 mL", "itemNumber": "EBL090", "category": "COGS: Supplies - Horticultural", "storage": null, "parNote": "Buy 2 at 1 bottle", "criticality": "", "increment": "250 ml bottle", "threshold": 1, "target": 2, "morrPrice": 17.88, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "storage-solution", "currentQty": null, "lastCounted": null}, {"item": "Snips", "vendorName": "Green Scissor Premium Snips - Straight", "itemNumber": "SCTGSPS", "category": "COGS: Cultivation Materials & Tools", "storage": "Individual Rooms, SHARED backstock Girls room Cultivation Rack", "parNote": "Buy 24 at 12", "criticality": "High", "increment": "individual snips", "threshold": 12, "target": 24, "morrPrice": null, "bfgPrice": 6.39, "otherPrice": null, "usage": "", "howToOrder": "Order from BFG Supply Favorites List", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "snips", "currentQty": null, "lastCounted": null}, {"item": "Pruning shears", "vendorName": "Hydrofarm HGHDS Heavy Duty Shear Pruner (for harvest)", "itemNumber": "SKU: ACC-HF-HDS", "category": "COGS: Cultivation Materials & Tools", "storage": "Individual Rooms, backstock Girls room Cultivation Rack, backstock Irrigation cart", "parNote": "Buy 10 at 5", "criticality": "High", "increment": "individual shears", "threshold": 5, "target": 10, "morrPrice": null, "bfgPrice": null, "otherPrice": 10.61, "usage": "", "howToOrder": "Click here to order pruning shears", "link": "https://www.htgsupply.com/products/hydrofarm-heavy-duty-shears/?gad_source=1&gad_campaignid=23038827735&gbraid=0AAAAAD84me3oU1GznxTJ3791x4WlZithy&gclid=Cj0KCQjwovPGBhDxARIsAFhgkwQvcC_6rczUnwyhH3igo5TJM7Bs5JZmCWK3OPXOB6OjNKvcknPufuAaArTrEALw_wcB", "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "pruning-shears", "currentQty": null, "lastCounted": null}, {"item": "Dip-n-Grow", "vendorName": "Dip'N Grow Rooting Solution - 1 Gallon", "itemNumber": "NDNG007", "category": "COGS: Supplies - Growing", "storage": "Mom room, backstock Girls room Cultivation Rack", "parNote": "Buy 1 gallon, reorder at 1/4 gallon", "criticality": "High", "increment": "1 gallon", "threshold": 0.25, "target": 1, "morrPrice": "$254/gal", "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "dip-n-grow", "currentQty": null, "lastCounted": null}, {"item": "Terracotta trays", "vendorName": "Grodan Gro-Smart Tray 78 sites", "itemNumber": "GGRO050", "category": "COGS: Supplies - Growing", "storage": "Mom room, individual on dry rack, backstock Girls room", "parNote": "Buy as needed", "criticality": "High", "increment": "tray (5 trays/case)", "threshold": null, "target": null, "morrPrice": 9.37, "bfgPrice": "58.09/5 per tray", "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "as-needed", "reviewNote": "No numeric par given — buy-as-needed item, excluded from auto ordering until Amy sets a level.", "vendorType": "morr", "id": "terracotta-trays", "currentQty": null, "lastCounted": null}, {"item": "Black tray", "vendorName": "Arable Acres Open Propagation Tray Flat No Holes - Heavy-Duty (100/Cs)", "itemNumber": "GAA216", "category": "COGS: Supplies - Growing", "storage": "Mom room, individual on dry rack, backstock Girls room", "parNote": "Buy as needed", "criticality": "Low", "increment": "tray (100/case)", "threshold": null, "target": null, "morrPrice": 125, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "as-needed", "reviewNote": "No numeric par given — buy-as-needed item, excluded from auto ordering until Amy sets a level.", "vendorType": "morr", "id": "black-tray", "currentQty": null, "lastCounted": null}, {"item": "Premium Dome", "vendorName": "Arable Acres Plastics Propagation Humidity Dome w/Vent - 12-Inch", "itemNumber": "GAA300", "category": "COGS: Supplies - Growing", "storage": "Mom room, individual on dry rack, backstock Girls room", "parNote": "Buy as needed", "criticality": "Low", "increment": "individual dome", "threshold": null, "target": null, "morrPrice": 3.8, "bfgPrice": "C", "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "as-needed", "reviewNote": "No numeric par given — buy-as-needed item, excluded from auto ordering until Amy sets a level.", "vendorType": "morr", "id": "premium-dome", "currentQty": null, "lastCounted": null}, {"item": "Transplant cubes", "vendorName": "GRD 1.5\" ao plugs 1.5x1.5x1.6 no wrap box", "itemNumber": "GRG000", "category": "COGS: Supplies - Medium", "storage": "Mom room, backstock Girls room", "parNote": "Order 2 boxes, reorder at 1", "criticality": "High", "increment": "box (case=box)", "threshold": 1, "target": 2, "morrPrice": 225.35, "bfgPrice": 290.55, "otherPrice": null, "usage": "Use 600/week, 12 weeks/quarter", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "transplant-cubes", "currentQty": null, "lastCounted": null}, {"item": "Glove EXTRA LARGE, 100/BX 10BX/CS", "vendorName": "Arable Acres Nitrile Gloves X-Large (Case of 1000)", "itemNumber": "GAA259", "category": "COGS: Cultivation Materials & Tools", "storage": "Individual Rooms, SHARED backstock Girls room Cultivation Rack", "parNote": "Order 6 boxes, reorder at 3", "criticality": "High", "increment": "box of 100 (10 bx/case)", "threshold": 3, "target": 6, "morrPrice": 35, "bfgPrice": null, "otherPrice": "Amazon >$40", "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "glove-extra-large-100-bx-10bx-cs", "currentQty": null, "lastCounted": null}, {"item": "Glove LARGE, 100/BX 10BX/CS", "vendorName": "Arable Acres Nitrile Gloves Large (Case of 1000)", "itemNumber": "GAA258", "category": "COGS: Cultivation Materials & Tools", "storage": "Individual Rooms, SHARED backstock Girls room Cultivation Rack", "parNote": "Order 4 boxes, reorder at 2", "criticality": "High", "increment": "box of 100 (10 bx/case)", "threshold": 2, "target": 4, "morrPrice": 35, "bfgPrice": null, "otherPrice": "Amazon >$40", "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "glove-large-100-bx-10bx-cs-leaving-these", "currentQty": null, "lastCounted": null}, {"item": "Glove MEDIUM, 100/BX 10BX/CS", "vendorName": "Arable Acres Nitrile Gloves Medium (Case of 1000)", "itemNumber": "GAA257", "category": "COGS: Cultivation Materials & Tools", "storage": "Individual Rooms, SHARED backstock Girls room Cultivation Rack", "parNote": "Order 1 box, reorder at 1/2 box", "criticality": "High", "increment": "box of 100 (10 bx/case)", "threshold": 0.5, "target": 1, "morrPrice": 35, "bfgPrice": null, "otherPrice": "Amazon >$40", "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "glove-medium-100-bx-10bx-cs-leaving-thes", "currentQty": null, "lastCounted": null}, {"item": "Glove SMALL, 100/BX 10BX/CS", "vendorName": "Arable Acres Nitrile Gloves Small (Case of 1000)", "itemNumber": "GAA256", "category": "COGS: Cultivation Materials & Tools", "storage": "Individual Rooms, SHARED backstock Girls room Cultivation Rack", "parNote": "Order 1 box, reorder at 1/2 box", "criticality": "High", "increment": "box of 100 (10 bx/case)", "threshold": 0.5, "target": 1, "morrPrice": 35, "bfgPrice": null, "otherPrice": "Amazon >$40", "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "glove-small-100-bx-10bx-cs-leaving-these", "currentQty": null, "lastCounted": null}, {"item": "Zip Ties or reusable ties", "vendorName": "Zip Ties 12 inch (1200 Pack), Black, 50lbs, UV Resistant", "itemNumber": "", "category": "COGS: Cultivation Materials & Tools", "storage": "Mechanical Room Grow Shelf, backstock Girls room Cultivation Rack", "parNote": "Order 4800 when 2400 left", "criticality": "Low", "increment": "1200 ties", "threshold": 2, "target": 4, "morrPrice": null, "bfgPrice": null, "otherPrice": 25.99, "usage": "", "howToOrder": "Click here to order Amazon Zip ties", "link": "https://www.amazon.com/dp/B09K63DNQ5?ref=fed_asin_title&th=1", "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "zip-ties-or-reusable-ties", "currentQty": null, "lastCounted": null}, {"item": "Zep", "vendorName": "Zep Concentrated Neutral pH Floor Cleaner - 1 gallon", "itemNumber": "N/A", "category": "COGS: Supplies - Horticultural", "storage": "Mechanical Room Under sink, backstock Mens Room Cleaning Rack", "parNote": "Buy 8 (4 is the moq), reorder at 3 (usually order 8 at a time to get free shipping)", "criticality": "Medium", "increment": "1 gallon jug", "threshold": 3, "target": 8, "morrPrice": null, "bfgPrice": null, "otherPrice": 44.76, "usage": "", "howToOrder": "https://zep.com/products/no-rinse-floor-disinfectant-zunrs128", "link": "https://zep.com/products/no-rinse-floor-disinfectant-zunrs128", "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "zep", "currentQty": null, "lastCounted": null}, {"item": "Antiscalant", "vendorName": "AXEON 206712 S-200 Antiscalant 5 Gallons", "itemNumber": 206712, "category": "COGS: Supplies - Horticultural", "storage": "Mechanical Room, backstock in Mechanical Room", "parNote": "Order 1 at 1/2 bottle left", "criticality": "Low", "increment": "5 gallon jug", "threshold": 0.5, "target": 1, "morrPrice": null, "bfgPrice": null, "otherPrice": 482.35, "usage": "", "howToOrder": "Click here to order antiscalant", "link": "https://www.freshwatersystems.com/products/axeon-206712-s-200-antiscalant-5-gallons?variant=13249842118699", "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "antiscalant", "currentQty": null, "lastCounted": null}, {"item": "Clone Solo cups", "vendorName": "Member's Mark Heavy-Duty Red Cups 18 fl. oz., 240 ct.", "itemNumber": "N/A", "category": "COGS: Supplies - Growing", "storage": "Mom room, backstock Girls room Cultivation Rack", "parNote": "Buy 240 cups when 100 left", "criticality": "Medium", "increment": "case of 240 cups", "threshold": 0.42, "target": 1, "morrPrice": null, "bfgPrice": null, "otherPrice": 12.48, "usage": "", "howToOrder": "https://www.samsclub.com/ip/members-mark-heavy-duty-red-cups-18-oz-240ct/19396805002", "link": "https://www.samsclub.com/ip/members-mark-heavy-duty-red-cups-18-oz-240ct/19396805002", "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "clone-solo-cups", "currentQty": null, "lastCounted": null}, {"item": "Staal Plast Polystyrene Glue, 300 ml Pack of 8", "vendorName": "Staal Plast Sealing Compound - 300 mL", "itemNumber": "TSP100", "category": "COGS: Supplies - Horticultural", "storage": "Girls room Cultivation Rack", "parNote": "Buy 8 at 3", "criticality": "", "increment": "pack of 8 tubes (Morr MOQ)", "threshold": 0.375, "target": 1, "morrPrice": 8.83, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "staal-plast-polystyrene-glue-300-ml-pack", "currentQty": null, "lastCounted": null}, {"item": "Netafim Emitters", "vendorName": "Netafim Drip Stake Assemblies - Woodpecker PC Junior Emitter - 0.5 GPH - 36in Tubing (Case of 200)", "itemNumber": "WNE872", "category": "COGS: Supplies - Horticultural", "storage": "Girls room Cultivation Rack", "parNote": "Buy 1400 at 400", "criticality": "", "increment": "case of 200", "threshold": 2, "target": 7, "morrPrice": 125.75, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from Morr", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "morr", "id": "netafim-emitters", "currentQty": null, "lastCounted": null}, {"item": "Plant Tags", "vendorName": "100 pieces of plant tags - 10 different colors", "itemNumber": "", "category": "COGS: Supplies - Horticultural", "storage": null, "parNote": "Buy 1000 at 500", "criticality": "", "increment": "pack of 100", "threshold": 5, "target": 10, "morrPrice": null, "bfgPrice": null, "otherPrice": 24.03, "usage": "", "howToOrder": "Amy buy from Temu", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "plant-tags", "currentQty": null, "lastCounted": null}, {"item": "Chlorox Pool Test Strips", "vendorName": "Clorox Pool & Spa Multi-use SmartStrips, 30 Count", "itemNumber": "N/A", "category": "COGS: Supplies - Horticultural", "storage": "Runoff data cart", "parNote": "Order 2 when 1 left", "criticality": "", "increment": "tube of 100 strips", "threshold": 1, "target": 2, "morrPrice": null, "bfgPrice": null, "otherPrice": 7.59, "usage": "", "howToOrder": "Click here to order Amazon chlorine test strips", "link": "https://www.amazon.com/dp/B09M6CHDVR?ref=fed_asin_title", "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "chlorox-pool-test-strips", "currentQty": null, "lastCounted": null}, {"item": "METRC tags", "vendorName": "METRC plant tags", "itemNumber": "N/A", "category": "COGS: Supplies - Horticultural", "storage": "Break room", "parNote": "Order 5000 when at 1250", "criticality": "High", "increment": "box of 5000", "threshold": 0.25, "target": 1, "morrPrice": null, "bfgPrice": null, "otherPrice": null, "usage": "", "howToOrder": "Order from METRC website - ask Post Harvest if they need package tags", "link": null, "confidence": "high", "reviewNote": "", "vendorType": "other", "id": "metrc-tags", "currentQty": null, "lastCounted": null}], "history": [], "notes": [], "meta": {"createdAt": null}}</script>
+<script>
+(function(){
+"use strict";
+
+const CSS_TEXT = `
+:root{
+  --bg:#f6f5f0;
+  --surface:#ffffff;
+  --surface-2:#f0efe8;
+  --ink:#232922;
+  --ink-muted:#5c6357;
+  --line:#dde1d4;
+  --accent:#3f6b3b;
+  --accent-ink:#ffffff;
+  --accent-soft:#e6ede1;
+  --critical:#a8402c;
+  --critical-soft:#f6e3de;
+  --warn:#a1721f;
+  --warn-soft:#f3e6c9;
+  --good:#3f6b3b;
+  --good-soft:#e2ece0;
+  --neutral-soft:#eceae1;
+  --focus:#2f6f8f;
+  --shadow: 0 1px 2px rgba(35,41,34,0.06), 0 6px 20px rgba(35,41,34,0.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#181c16;
+    --surface:#20251d;
+    --surface-2:#262b21;
+    --ink:#eef0e7;
+    --ink-muted:#a4ab98;
+    --line:#333a2c;
+    --accent:#7bb473;
+    --accent-ink:#0f150d;
+    --accent-soft:#26331f;
+    --critical:#e2836a;
+    --critical-soft:#3a2620;
+    --warn:#d8ab5a;
+    --warn-soft:#3a3120;
+    --good:#7bb473;
+    --good-soft:#243024;
+    --neutral-soft:#2a2f24;
+    --focus:#7cc3e6;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#181c16;
+  --surface:#20251d;
+  --surface-2:#262b21;
+  --ink:#eef0e7;
+  --ink-muted:#a4ab98;
+  --line:#333a2c;
+  --accent:#7bb473;
+  --accent-ink:#0f150d;
+  --accent-soft:#26331f;
+  --critical:#e2836a;
+  --critical-soft:#3a2620;
+  --warn:#d8ab5a;
+  --warn-soft:#3a3120;
+  --good:#7bb473;
+  --good-soft:#243024;
+  --neutral-soft:#2a2f24;
+  --focus:#7cc3e6;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+::selection{ background:var(--accent-soft); }
+h1,h2,h3,.display{
+  font-family:"Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  font-weight:800;
+  letter-spacing:-0.01em;
+  text-wrap:balance;
+  margin:0;
+}
+.mono, .qty-input, .num{ font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; font-variant-numeric: tabular-nums; }
+a{ color:var(--focus); }
+button{ font-family:inherit; }
+:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1080px; margin:0 auto; padding:14px 20px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.brand{ display:flex; flex-direction:column; gap:2px; margin-right:auto; }
+.brand .eyebrow{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); font-weight:600; }
+.brand h1{ font-size:19px; }
+.tabs{ display:flex; gap:4px; background:var(--surface-2); padding:4px; border-radius:10px; }
+.tab-btn{
+  border:none; background:transparent; color:var(--ink-muted);
+  padding:8px 14px; border-radius:7px; font-size:13.5px; font-weight:600;
+  cursor:pointer; white-space:nowrap;
+}
+.tab-btn.active{ background:var(--surface); color:var(--ink); box-shadow:var(--shadow); }
+.tab-btn:hover:not(.active){ color:var(--ink); }
+
+.wrap{ max-width:1080px; margin:0 auto; padding:22px 20px 120px; }
+.page-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:18px; flex-wrap:wrap;}
+.page-head h2{ font-size:24px; }
+.page-head p{ color:var(--ink-muted); margin:4px 0 0; font-size:14px; max-width:60ch; }
+
+.stat-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:20px; }
+.stat{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px;
+}
+.stat .num{ font-size:26px; font-weight:600; display:block; }
+.stat .label{ font-size:12px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+.stat.crit .num{ color:var(--critical); }
+.stat.ok .num{ color:var(--good); }
+
+.toolbar{ display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; align-items:center; }
+.search{
+  flex:1; min-width:180px; padding:9px 12px; border-radius:8px; border:1px solid var(--line);
+  background:var(--surface); color:var(--ink); font-size:14px;
+}
+.chip-toggle{
+  display:flex; gap:6px; flex-wrap:wrap;
+}
+.chip{
+  border:1px solid var(--line); background:var(--surface); color:var(--ink-muted);
+  padding:6px 11px; border-radius:999px; font-size:12.5px; font-weight:600; cursor:pointer;
+}
+.chip.active{ background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+
+.cat-group{ margin-bottom:22px; }
+.cat-title{
+  font-size:12px; text-transform:uppercase; letter-spacing:.07em; font-weight:700;
+  color:var(--ink-muted); padding:0 2px 8px; border-bottom:1px solid var(--line); margin-bottom:10px;
+}
+.item-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:14px 16px; margin-bottom:8px; box-shadow:var(--shadow);
+}
+.item-top{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+.item-name{ font-size:15px; font-weight:600; line-height:1.3; }
+.item-sub{ font-size:12.5px; color:var(--ink-muted); margin-top:2px; }
+.badges{ display:flex; gap:6px; flex-shrink:0; }
+.badge{
+  font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px; white-space:nowrap;
+  text-transform:uppercase; letter-spacing:.03em;
+}
+.badge.crit-highest{ background:var(--critical-soft); color:var(--critical); }
+.badge.crit-high{ background:var(--warn-soft); color:var(--warn); }
+.badge.crit-medium{ background:var(--neutral-soft); color:var(--ink-muted); }
+.badge.crit-low{ background:var(--neutral-soft); color:var(--ink-muted); }
+.badge.needs{ background:var(--critical-soft); color:var(--critical); }
+.badge.reactive{ background:var(--warn-soft); color:var(--warn); }
+.badge.review{ background:var(--warn-soft); color:var(--warn); }
+
+.count-row{ display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap; }
+.stepper{ display:flex; align-items:center; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+.stepper button{
+  border:none; background:var(--surface-2); color:var(--ink); width:32px; height:34px; font-size:16px; cursor:pointer;
+}
+.stepper button:hover{ background:var(--accent-soft); color:var(--accent); }
+.qty-input{
+  width:74px; text-align:center; border:none; border-left:1px solid var(--line); border-right:1px solid var(--line);
+  height:34px; font-size:14.5px; background:var(--surface); color:var(--ink);
+}
+.qty-unit{ font-size:12.5px; color:var(--ink-muted); }
+.par-note{ font-size:12px; color:var(--ink-muted); margin-left:auto; text-align:right; }
+.last-counted{ font-size:11.5px; color:var(--ink-muted); margin-top:6px; }
+.dirty-dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); display:inline-block; margin-right:6px; }
+
+.savebar{
+  position:sticky; bottom:0; z-index:20; background:var(--surface); border-top:1px solid var(--line);
+  padding:12px 20px; display:flex; justify-content:center;
+}
+.savebar-inner{ max-width:1080px; width:100%; display:flex; align-items:center; gap:14px; }
+.save-status{ font-size:13px; color:var(--ink-muted); flex:1; }
+.btn{
+  border:none; border-radius:9px; padding:11px 18px; font-size:14px; font-weight:700; cursor:pointer;
+}
+.btn-primary{ background:var(--accent); color:var(--accent-ink); }
+.btn-primary:disabled{ opacity:.4; cursor:default; }
+.btn-ghost{ background:var(--surface-2); color:var(--ink); }
+.btn-sm{ padding:7px 12px; font-size:12.5px; border-radius:7px; }
+
+.order-section{ margin-bottom:26px; }
+.order-section h3{ font-size:16px; margin-bottom:4px; }
+.order-section .hint{ font-size:13px; color:var(--ink-muted); margin-bottom:10px; }
+.copy-box{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px;
+}
+textarea.list-out{
+  width:100%; min-height:160px; border:1px solid var(--line); border-radius:8px; padding:10px;
+  background:var(--surface-2); color:var(--ink); font-size:13px; resize:vertical;
+}
+.vendor-group{ margin-bottom:16px; }
+.vendor-group h4{ font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-muted); margin-bottom:8px; }
+.manual-item{
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:6px;
+}
+.manual-item .name{ font-weight:600; font-size:14px; }
+.manual-item .meta{ font-size:12px; color:var(--ink-muted); }
+.manual-item .order-qty{ font-weight:700; color:var(--critical); font-size:14px; white-space:nowrap; }
+.link-btn{
+  background:var(--accent-soft); color:var(--accent); border-radius:7px; padding:6px 11px; font-size:12.5px;
+  font-weight:700; text-decoration:none; white-space:nowrap;
+}
+
+.hist-item{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:10px; }
+.hist-top{ display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
+.hist-type{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:3px 8px; border-radius:6px; }
+.hist-type.count{ background:var(--accent-soft); color:var(--accent); }
+.hist-type.order{ background:var(--warn-soft); color:var(--warn); }
+.hist-date{ font-size:12.5px; color:var(--ink-muted); }
+.hist-detail{ font-size:13px; color:var(--ink-muted); margin-top:6px; }
+.hist-detail summary{ cursor:pointer; color:var(--focus); font-weight:600; }
+.hist-list{ margin:8px 0 0; padding-left:18px; font-size:12.5px; }
+
+.setup-row{
+  display:grid; grid-template-columns: 1.5fr .8fr .7fr .7fr 1.1fr 1.1fr; gap:10px; align-items:center;
+  padding:10px 4px; border-bottom:1px solid var(--line); font-size:13px;
+}
+.setup-row.head{ font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-muted); font-weight:700; }
+.setup-row input, .setup-row select{
+  width:100%; border:1px solid var(--line); border-radius:6px; padding:6px 8px; background:var(--surface); color:var(--ink); font-size:13px;
+}
+.review-note{ font-size:12px; color:var(--warn); margin-top:3px; }
+.cat-select{
+  display:block; width:100%; margin-top:5px; font-size:11.5px; padding:3px 6px; border-radius:6px; border:1px solid var(--line);
+  background:var(--accent-soft); color:var(--accent); font-weight:600; max-width:100%; box-sizing:border-box;
+}
+
+.empty{ text-align:center; padding:50px 20px; color:var(--ink-muted); }
+.notes-box{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:20px;
+}
+.notes-box h3{ font-size:15px; margin-bottom:2px; }
+.notes-box .hint{ font-size:12.5px; color:var(--ink-muted); margin-bottom:10px; }
+.note-add-row{ display:flex; gap:8px; margin-bottom:12px; }
+.note-add-row input{
+  flex:1; padding:9px 12px; border-radius:8px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink); font-size:14px;
+}
+.note-item{
+  display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+  padding:9px 0; border-top:1px solid var(--line);
+}
+.note-item:first-of-type{ border-top:none; }
+.note-item .text{ font-size:13.5px; }
+.note-item .when{ font-size:11.5px; color:var(--ink-muted); margin-top:2px; }
+.note-dismiss{
+  background:var(--neutral-soft); color:var(--ink-muted); border:none; border-radius:6px; padding:5px 9px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;
+}
+.note-dismiss:hover{ background:var(--accent-soft); color:var(--accent); }
+.connecting-banner{
+  background:var(--neutral-soft); color:var(--ink-muted); padding:10px 16px; border-radius:10px; font-size:13px; margin-bottom:16px;
+}
+.small-muted{ font-size:12px; color:var(--ink-muted); }
+
+@media (max-width:640px){
+  .setup-row{ grid-template-columns: 1fr; gap:4px; padding:12px 4px; }
+  .setup-row.head{ display:none; }
+  .par-note{ margin-left:0; text-align:left; }
+}
+`;
+document.getElementById("app-style").textContent = CSS_TEXT;
+
+const CATEGORY_ORDER = [
+  "COGS: Supplies - Horticultural - Fertilizer",
+  "COGS: Supplies - Horticultural - IPM Inputs",
+  "COGS: Supplies - Horticultural",
+  "COGS: Supplies - Growing",
+  "COGS: Supplies - Medium",
+  "COGS: Supplies - Horticultural - Propogation",
+  "COGS: Cultivation Materials & Tools",
+  "1/2 to COGS:Post Harvest Supplies and Tools and 1/2 to Cultivation Materials & Tools"
+];
+
+function catLabel(c){
+  if(!c) return "Uncategorized";
+  return c.replace(/^COGS:\s*/,"");
+}
+
+let state = JSON.parse(document.getElementById('state-data').textContent);
+let activeTab = 'count';
+let dirty = false;
+let searchQ = '';
+let saveMsg = '';
+const SUPABASE_URL = 'https://hnnihdrbzmxhpmaciamk.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_y2SccML1Ra-LTxNzDlZ1xw_YVvFD4Lk';
+let sbClient = null;
+let dbReady = false;
+
+function fmtQty(n){
+  if(n===null || n===undefined) return '—';
+  const r = Math.round(n*100)/100;
+  return (r % 1 === 0) ? String(r) : String(r);
+}
+function round2(n){ return Math.round(n*100)/100; }
+
+function orderQtyFor(it){
+  if(it.threshold===null || it.target===null || it.threshold===undefined || it.target===undefined) return null;
+  if(it.currentQty===null || it.currentQty===undefined) return null;
+  if(it.currentQty < it.threshold){
+    return Math.max(0, round2(it.target - it.currentQty));
+  }
+  return 0;
+}
+function needsOrder(it){
+  const q = orderQtyFor(it);
+  return q !== null && q > 0;
+}
+function isTracked(it){
+  return it.threshold !== null && it.threshold !== undefined && it.target !== null && it.target !== undefined;
+}
+
+function groupByCategory(items){
+  const groups = {};
+  items.forEach(it=>{
+    const key = it.category || "Uncategorized";
+    if(!groups[key]) groups[key]=[];
+    groups[key].push(it);
+  });
+  const orderedKeys = Object.keys(groups).sort((a,b)=>{
+    const ai = CATEGORY_ORDER.indexOf(a), bi = CATEGORY_ORDER.indexOf(b);
+    return (ai===-1?999:ai) - (bi===-1?999:bi);
+  });
+  return orderedKeys.map(k=>({cat:k, items:groups[k]}));
+}
+
+function critBadgeClass(c){
+  const s=(c||'').toLowerCase();
+  if(s==='highest') return 'crit-highest';
+  if(s==='high') return 'crit-high';
+  if(s==='medium') return 'crit-medium';
+  return 'crit-low';
+}
+
+function escapeHtml(s){
+  if(s===null||s===undefined) return '';
+  return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// Apply saved db state onto the in-memory catalog
+function applyDbState(data){
+  if(data.counts && Array.isArray(data.counts)){
+    data.counts.forEach(c=>{
+      const item = state.items.find(i=>i.id===c.id);
+      if(item){
+        item.currentQty = (c.currentQty !== undefined) ? c.currentQty : null;
+        item.lastCounted = c.lastCounted || null;
+      }
+    });
+  }
+  if(data.history && Array.isArray(data.history)) state.history = data.history;
+  if(data.notes && Array.isArray(data.notes)) state.notes = data.notes;
+}
+
+// ---------- NOTES ----------
+function renderNotesBox(){
+  const notes = state.notes || [];
+  let html = `<div class="notes-box">
+    <h3>Anything not on this list?</h3>
+    <div class="hint">Brendan — flag anything Amy should know about that isn't one of the tracked items above.</div>
+    <div class="note-add-row">
+      <input type="text" id="note-input" placeholder="e.g. we're out of the blue tape, not on here anywhere" onkeydown="if(event.key==='Enter') App.addNote()">
+      <button class="btn btn-primary btn-sm" onclick="App.addNote()">Add note</button>
+    </div>`;
+  if(!notes.length){
+    html += `<div class="small-muted">No open notes.</div>`;
+  } else {
+    notes.slice().reverse().forEach(n=>{
+      html += `<div class="note-item">
+        <div><div class="text">${escapeHtml(n.text)}</div><div class="when">${new Date(n.ts).toLocaleString()}</div></div>
+        <button class="note-dismiss" onclick="App.dismissNote('${n.id}')">Handled</button>
+      </div>`;
+    });
+  }
+  html += `</div>`;
+  return html;
+}
+
+// ---------- COUNT TAB ----------
+function renderCount(){
+  const q = searchQ.trim().toLowerCase();
+  let items = state.items.filter(it => !q || it.item.toLowerCase().includes(q) || (it.vendorName||'').toLowerCase().includes(q));
+  const groups = groupByCategory(items);
+  const trackedCount = state.items.filter(isTracked).length;
+  const countedCount = state.items.filter(it=>it.currentQty!==null && it.currentQty!==undefined).length;
+
+  let html = `
+  <div class="page-head">
+    <div>
+      <h2>Physical Count</h2>
+      <p>Walk the room and enter what's on the shelf, in the increments you buy in (drums, bags, jugs, boxes — fractions like .25 or .5 are fine). Hit Save Count when you're done.</p>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><span class="num mono">${countedCount}/${state.items.length}</span><span class="label">Items counted</span></div>
+    <div class="stat crit"><span class="num mono">${state.items.filter(needsOrder).length}</span><span class="label">Below par right now</span></div>
+  </div>
+  ${!dbReady ? `<div class="connecting-banner">Connecting to database…</div>` : ''}
+  ${renderNotesBox()}
+  <div class="toolbar">
+    <input class="search" type="text" placeholder="Search items…" value="${escapeHtml(searchQ)}" oninput="App.setSearch(this.value)">
+  </div>`;
+
+  groups.forEach(g=>{
+    html += `<div class="cat-group"><div class="cat-title">${escapeHtml(catLabel(g.cat))}</div>`;
+    g.items.forEach(it=>{
+      const tracked = isTracked(it);
+      const oq = orderQtyFor(it);
+      html += `<div class="item-card">
+        <div class="item-top">
+          <div>
+            <div class="item-name">${it.dirty?'<span class="dirty-dot"></span>':''}${escapeHtml(it.item)}</div>
+            <div class="item-sub">${escapeHtml(it.increment)}${it.itemNumber?' · #'+escapeHtml(it.itemNumber):''}</div>
+          </div>
+          <div class="badges">
+            ${it.criticality?`<span class="badge ${critBadgeClass(it.criticality)}">${escapeHtml(it.criticality)}</span>`:''}
+            ${tracked && oq>0 ? `<span class="badge needs">Order</span>`:''}
+            ${it.confidence==='reactive'?`<span class="badge reactive">Reactive</span>`:''}
+            ${it.confidence==='as-needed'?`<span class="badge reactive">As needed</span>`:''}
+          </div>
+        </div>
+        <div class="count-row">
+          <div class="stepper">
+            <button type="button" onclick="App.stepQty('${it.id}',-1)">−</button>
+            <input class="qty-input" type="number" step="0.01" value="${it.currentQty===null||it.currentQty===undefined?'':it.currentQty}" placeholder="—" oninput="App.setQty('${it.id}', this.value)">
+            <button type="button" onclick="App.stepQty('${it.id}',1)">+</button>
+          </div>
+          <span class="qty-unit">${escapeHtml(it.increment)}</span>
+          ${tracked ? `<span class="par-note">reorder at ${fmtQty(it.threshold)} · buy up to ${fmtQty(it.target)}</span>` : `<span class="par-note">${escapeHtml(it.parNote||'not tracked')}</span>`}
+        </div>
+        ${it.lastCounted ? `<div class="last-counted">Last counted ${new Date(it.lastCounted).toLocaleDateString()}</div>`:''}
+      </div>`;
+    });
+    html += `</div>`;
+  });
+
+  if(groups.length===0) html += `<div class="empty">No items match "${escapeHtml(searchQ)}".</div>`;
+  return html;
+}
+
+// ---------- ORDER TAB ----------
+function renderOrder(){
+  const morrItems = state.items.filter(it=>isTracked(it) && it.vendorType==='morr' && needsOrder(it));
+  const otherItems = state.items.filter(it=>isTracked(it) && it.vendorType!=='morr' && it.vendorType!=='internal' && needsOrder(it));
+  const internalItems = state.items.filter(it=>isTracked(it) && it.vendorType==='internal' && needsOrder(it));
+  const asNeeded = state.items.filter(it=>!isTracked(it));
+  const uncounted = state.items.filter(it=>isTracked(it) && (it.currentQty===null||it.currentQty===undefined));
+
+  let morrText = morrItems.map(it=>{
+    const num = it.itemNumber || '(no item #)';
+    return `${num}   x${fmtQty(orderQtyFor(it))}   — ${it.item}`;
+  }).join('\n');
+  if(!morrText) morrText = '(nothing below par right now)';
+
+  const otherGroups = {};
+  otherItems.forEach(it=>{
+    const key = it.howToOrder || 'Unspecified source';
+    if(!otherGroups[key]) otherGroups[key]=[];
+    otherGroups[key].push(it);
+  });
+
+  let html = `
+  <div class="page-head">
+    <div>
+      <h2>Order List</h2>
+      <p>Auto-generated from Brendan's last count against par levels. Copy the Morr list into an email to Eric; work the rest from their links.</p>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat crit"><span class="num mono">${morrItems.length}</span><span class="label">Morr items to order</span></div>
+    <div class="stat crit"><span class="num mono">${otherItems.length}</span><span class="label">Other items to order</span></div>
+    <div class="stat"><span class="num mono">${uncounted.length}</span><span class="label">Not yet counted</span></div>
+  </div>
+
+  ${(state.notes||[]).length ? renderNotesBox() : ''}
+
+  <div class="order-section">
+    <h3>For Eric at Morr, Inc.</h3>
+    <div class="hint">Item # first, so it's easy to match against their system.</div>
+    <div class="copy-box">
+      <textarea class="list-out mono" id="morr-list" readonly>${escapeHtml(morrText)}</textarea>
+      <div class="count-row" style="margin-top:10px;">
+        <button class="btn btn-primary btn-sm" onclick="App.copyMorr()">Copy list</button>
+        <button class="btn btn-ghost btn-sm" onclick="App.logOrderSent('morr')">Log as sent to Eric</button>
+        <span class="small-muted" id="copy-msg"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-section">
+    <h3>Everyone else</h3>
+    <div class="hint">Grouped by source — click through or follow the note.</div>`;
+
+  const groupKeys = Object.keys(otherGroups);
+  if(groupKeys.length===0){
+    html += `<div class="copy-box small-muted">Nothing outside Morr is below par right now.</div>`;
+  } else {
+    groupKeys.forEach(key=>{
+      html += `<div class="vendor-group"><h4>${escapeHtml(key)}</h4>`;
+      otherGroups[key].forEach(it=>{
+        html += `<div class="manual-item">
+          <div>
+            <div class="name">${escapeHtml(it.item)}</div>
+            <div class="meta">${escapeHtml(it.increment)}${it.itemNumber?' · #'+escapeHtml(it.itemNumber):''}</div>
+          </div>
+          <div class="order-qty mono">×${fmtQty(orderQtyFor(it))}</div>
+          ${it.link ? `<a class="link-btn" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">Open link</a>` : ''}
+        </div>`;
+      });
+      html += `</div>`;
+    });
+    html += `<button class="btn btn-ghost btn-sm" onclick="App.logOrderSent('other')">Log these as ordered</button>`;
+  }
+  html += `</div>`;
+
+  if(internalItems.length){
+    html += `<div class="order-section"><h3>Get directly from Plant Nerd</h3>
+    <div class="hint">Sourced in-house, not ordered from a vendor — Brendan should just ask Amy for more.</div>`;
+    internalItems.forEach(it=>{
+      html += `<div class="manual-item">
+        <div><div class="name">${escapeHtml(it.item)}</div><div class="meta">${escapeHtml(it.increment)}</div></div>
+        <div class="order-qty mono">×${fmtQty(orderQtyFor(it))}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if(asNeeded.length){
+    html += `<div class="order-section"><h3>Buy-as-needed / reactive (not auto-tracked)</h3>
+    <div class="hint">These don't have a par level, so they never show up above automatically.</div>`;
+    asNeeded.forEach(it=>{
+      html += `<div class="manual-item">
+        <div><div class="name">${escapeHtml(it.item)}</div><div class="meta">${escapeHtml(it.increment)}</div></div>
+        ${it.link ? `<a class="link-btn" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">Open link</a>` : ''}
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  return html;
+}
+
+// ---------- HISTORY TAB ----------
+function renderHistory(){
+  let html = `<div class="page-head"><div><h2>History</h2><p>Every saved count, order marked as sent, and note Brendan's added, most recent first.</p></div></div>`;
+  if(!state.history.length){
+    html += `<div class="empty">Nothing logged yet — history fills in as counts are saved, orders sent, and notes added.</div>`;
+    return html;
+  }
+  const events = state.history.slice().reverse();
+  events.forEach(ev=>{
+    const d = new Date(ev.ts);
+    if(ev.type==='count'){
+      html += `<div class="hist-item">
+        <div class="hist-top"><span class="hist-type count">Count</span><span class="hist-date">${d.toLocaleString()}</span></div>
+        <div class="hist-detail">${ev.entries.length} item${ev.entries.length===1?'':'s'} updated
+          <details><summary>View items</summary><ul class="hist-list">
+            ${ev.entries.map(e=>`<li>${escapeHtml(e.item)}: ${fmtQty(e.qty)}</li>`).join('')}
+          </ul></details>
+        </div>
+      </div>`;
+    } else if(ev.type==='order'){
+      html += `<div class="hist-item">
+        <div class="hist-top"><span class="hist-type order">Order sent — ${ev.vendorLabel}</span><span class="hist-date">${d.toLocaleString()}</span></div>
+        <div class="hist-detail">${ev.entries.length} item${ev.entries.length===1?'':'s'}
+          <details><summary>View items</summary><ul class="hist-list">
+            ${ev.entries.map(e=>`<li>${escapeHtml(e.item)}: ×${fmtQty(e.qty)}</li>`).join('')}
+          </ul></details>
+        </div>
+      </div>`;
+    } else if(ev.type==='note'){
+      html += `<div class="hist-item">
+        <div class="hist-top"><span class="hist-type count">Note</span><span class="hist-date">${d.toLocaleString()}</span></div>
+        <div class="hist-detail">${escapeHtml(ev.text)}</div>
+      </div>`;
+    }
+  });
+  return html;
+}
+
+// ---------- SETUP TAB ----------
+function renderSetup(){
+  const flagged = state.items.filter(it=>it.confidence==='low'||it.confidence==='medium');
+  let html = `
+  <div class="page-head">
+    <div>
+      <h2>Item Setup</h2>
+      <p>Reorder point and target quantity drive the Order List math, both in the item's buying increment. ${flagged.length} item${flagged.length===1?'':'s'} below were guessed from messy notes in your original sheet and need a look.</p>
+    </div>
+  </div>
+  <div class="setup-row head">
+    <div>Item</div><div>Reorder at</div><div>Buy up to</div><div>Criticality</div><div>How to order</div><div>Order link</div>
+  </div>`;
+  const allCats = Array.from(new Set([...CATEGORY_ORDER, ...state.items.map(it=>it.category||'')])).filter(Boolean);
+  state.items.forEach(it=>{
+    const flag = it.confidence==='low' || it.confidence==='medium';
+    html += `<div class="setup-row">
+      <div>
+        <div style="font-weight:600;">${escapeHtml(it.item)} ${flag?'<span class="badge review">Review</span>':''}</div>
+        <input class="cat-select" style="background:var(--surface-2); color:var(--ink-muted); font-weight:500;" type="text" value="${escapeHtml(it.increment)}" placeholder="buying increment, e.g. 50 lb bag" onchange="App.setField('${it.id}','increment',this.value)">
+        <select class="cat-select" onchange="App.setField('${it.id}','category',this.value)">
+          ${allCats.map(c=>`<option value="${escapeHtml(c)}" ${it.category===c?'selected':''}>${escapeHtml(catLabel(c))}</option>`).join('')}
+        </select>
+        ${it.reviewNote ? `<div class="review-note">${escapeHtml(it.reviewNote)}</div>` : ''}
+      </div>
+      <div><input type="number" step="0.01" value="${it.threshold===null?'':it.threshold}" placeholder="not tracked" onchange="App.setField('${it.id}','threshold',this.value)"></div>
+      <div><input type="number" step="0.01" value="${it.target===null?'':it.target}" placeholder="not tracked" onchange="App.setField('${it.id}','target',this.value)"></div>
+      <div>
+        <select onchange="App.setField('${it.id}','criticality',this.value)">
+          ${['','Low','Medium','High','HIGHEST'].map(c=>`<option value="${c}" ${it.criticality===c?'selected':''}>${c||'—'}</option>`).join('')}
+        </select>
+      </div>
+      <div><input type="text" value="${escapeHtml(it.howToOrder)}" onchange="App.setField('${it.id}','howToOrder',this.value)"></div>
+      <div><input type="url" placeholder="https://…" value="${escapeHtml(it.link||'')}" onchange="App.setField('${it.id}','link',this.value)"></div>
+    </div>`;
+  });
+  return html;
+}
+
+function render(){
+  const app = document.getElementById('app');
+  let body = '';
+  if(activeTab==='count') body = renderCount();
+  else if(activeTab==='order') body = renderOrder();
+  else if(activeTab==='history') body = renderHistory();
+  else if(activeTab==='setup') body = renderSetup();
+
+  const saveDisabled = !dirty || !dbReady;
+  app.innerHTML = `
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <span class="eyebrow">Hazel Park · Cultivation</span>
+          <h1>Inventory &amp; Ordering</h1>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn ${activeTab==='count'?'active':''}" onclick="App.setTab('count')">Count</button>
+          <button class="tab-btn ${activeTab==='order'?'active':''}" onclick="App.setTab('order')">Order List</button>
+          <button class="tab-btn ${activeTab==='history'?'active':''}" onclick="App.setTab('history')">History</button>
+          <button class="tab-btn ${activeTab==='setup'?'active':''}" onclick="App.setTab('setup')">Item Setup</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      ${body}
+    </div>
+    <div class="savebar">
+      <div class="savebar-inner">
+        <span class="save-status">${saveMsg || (dirty ? 'Unsaved changes' : (dbReady ? 'All changes saved' : 'Connecting…'))}</span>
+        <button class="btn btn-primary" ${saveDisabled?'disabled':''} onclick="App.save()">Save${dirty?' Count':''}</button>
+      </div>
+    </div>
+  `;
+}
+
+// ---------- STATE MUTATIONS ----------
+function findItem(id){ return state.items.find(i=>i.id===id); }
+
+const App = {
+  setTab(t){ activeTab=t; searchQ=''; render(); },
+  setSearch(v){ searchQ=v; render(); },
+  setQty(id, v){
+    const it = findItem(id);
+    if(!it) return;
+    it.currentQty = v===''? null : parseFloat(v);
+    it.dirty = true;
+    dirty = true;
+    saveMsg='';
+    document.querySelector('.save-status').textContent = 'Unsaved changes';
+    const btn = document.querySelector('.btn-primary');
+    if(btn) btn.disabled = !dbReady;
+  },
+  stepQty(id, delta){
+    const it = findItem(id);
+    if(!it) return;
+    const cur = (it.currentQty===null||it.currentQty===undefined) ? 0 : it.currentQty;
+    it.currentQty = Math.max(0, round2(cur+delta));
+    it.dirty = true;
+    dirty = true;
+    render();
+  },
+  setField(id, field, v){
+    const it = findItem(id);
+    if(!it) return;
+    if(field==='threshold' || field==='target'){
+      it[field] = v===''? null : parseFloat(v);
+    } else if(field==='link'){
+      it[field] = v.trim()===''? null : v.trim();
+    } else {
+      it[field] = v;
+    }
+    dirty = true;
+    render();
+  },
+  copyMorr(){
+    const ta = document.getElementById('morr-list');
+    ta.select();
+    navigator.clipboard && navigator.clipboard.writeText(ta.value).catch(()=>{});
+    try{ document.execCommand('copy'); }catch(e){}
+    const m = document.getElementById('copy-msg');
+    if(m){ m.textContent='Copied.'; setTimeout(()=>{ if(m) m.textContent=''; },2500); }
+  },
+  logOrderSent(kind){
+    const items = kind==='morr'
+      ? state.items.filter(it=>isTracked(it) && it.vendorType==='morr' && needsOrder(it))
+      : state.items.filter(it=>isTracked(it) && it.vendorType!=='morr' && it.vendorType!=='internal' && needsOrder(it));
+    if(!items.length) return;
+    state.history.push({
+      ts: new Date().toISOString(),
+      type: 'order',
+      vendorLabel: kind==='morr' ? 'Morr, Inc.' : 'Other vendors',
+      entries: items.map(it=>({item:it.item, qty:orderQtyFor(it)}))
+    });
+    doSave(false);
+  },
+  addNote(){
+    const input = document.getElementById('note-input');
+    if(!input) return;
+    const text = input.value.trim();
+    if(!text) return;
+    const note = { id: 'n' + Date.now() + Math.random().toString(36).slice(2,7), text, ts: new Date().toISOString() };
+    state.notes = state.notes || [];
+    state.notes.push(note);
+    state.history.push({ ts: note.ts, type: 'note', text: note.text });
+    doSave(false);
+  },
+  dismissNote(id){
+    state.notes = (state.notes||[]).filter(n=>n.id!==id);
+    doSave(false);
+  },
+  async save(){ await doSave(true); }
+};
+
+// ---------- SUPABASE SAVE ----------
+async function doSave(isCount){
+  if(!sbClient){
+    saveMsg = 'Not connected — reload and try again.';
+    render();
+    return;
+  }
+  if(isCount){
+    const changed = state.items.filter(it=>it.dirty);
+    if(changed.length){
+      const now = new Date().toISOString();
+      changed.forEach(it=>{ it.lastCounted = now; delete it.dirty; });
+      state.history.push({
+        ts: now,
+        type: 'count',
+        entries: changed.map(it=>({item:it.item, qty:it.currentQty}))
+      });
+    }
+    dirty = false;
+  }
+  saveMsg = 'Saving…';
+  render();
+  try{
+    const counts = state.items.map(it=>({
+      id: it.id,
+      currentQty: (it.currentQty !== null && it.currentQty !== undefined) ? it.currentQty : null,
+      lastCounted: it.lastCounted || null
+    }));
+    const payload = {
+      counts,
+      history: state.history || [],
+      notes: state.notes || [],
+      savedAt: new Date().toISOString()
+    };
+    const { error } = await sbClient
+      .from('inventory_state')
+      .upsert({ id: 'main', data: payload, saved_at: new Date().toISOString() });
+    if(error) throw error;
+    saveMsg = 'Saved!';
+    setTimeout(()=>{ saveMsg=''; render(); }, 2000);
+  } catch(err){
+    saveMsg = 'Could not save — try again.';
+    console.error(err);
+  }
+  render();
+}
+
+// ---------- SUPABASE INIT ----------
+async function initDb(){
+  try{
+    sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // Load saved state
+    try{
+      const { data, error } = await sbClient
+        .from('inventory_state')
+        .select('data')
+        .eq('id', 'main')
+        .maybeSingle();
+      if(!error && data && data.data) applyDbState(data.data);
+    } catch(e){
+      // Start fresh if load fails
+    }
+
+    dbReady = true;
+    render();
+
+  } catch(e){
+    saveMsg = 'Could not connect to database.';
+    render();
+  }
+}
+
+window.App = App;
+render();
+initDb();
+
+})();
+</script>
+</body>
+</html>
