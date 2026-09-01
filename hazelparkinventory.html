@@ -239,6 +239,27 @@ textarea.list-out{
 .hist-detail summary{ cursor:pointer; color:var(--focus); font-weight:600; }
 .hist-list{ margin:8px 0 0; padding-left:18px; font-size:12.5px; }
 
+.status-table{ width:100%; border-collapse:collapse; font-size:13px; }
+.status-table th{
+  text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-muted); font-weight:700; padding:8px 10px; border-bottom:2px solid var(--line);
+  white-space:nowrap;
+}
+.status-table td{ padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:middle; }
+.status-table tr:last-child td{ border-bottom:none; }
+.status-table tr:hover td{ background:var(--surface-2); }
+.status-item-name{ font-weight:600; color:var(--ink); }
+.status-item-sub{ font-size:11.5px; color:var(--ink-muted); margin-top:2px; }
+.status-badge{ display:inline-block; border-radius:6px; padding:3px 8px; font-size:11.5px; font-weight:700; white-space:nowrap; }
+.status-badge.ok{ background:var(--good-soft); color:var(--good); }
+.status-badge.low{ background:var(--critical-soft); color:var(--critical); }
+.status-badge.warn{ background:var(--warn-soft); color:var(--warn); }
+.status-badge.none{ background:var(--neutral-soft); color:var(--ink-muted); }
+.status-order{ font-weight:700; color:var(--critical); font-size:13px; }
+.status-source{ font-size:12px; color:var(--ink-muted); }
+.status-ts{ font-size:11.5px; color:var(--ink-muted); white-space:nowrap; }
+.table-wrap{ overflow-x:auto; background:var(--surface); border:1px solid var(--line); border-radius:14px; }
+
 .setup-row{
   display:grid; grid-template-columns: 1.5fr .8fr .7fr .7fr 1.1fr 1.1fr; gap:10px; align-items:center;
   padding:10px 4px; border-bottom:1px solid var(--line); font-size:13px;
@@ -376,6 +397,7 @@ function applyDbState(data){
   }
   if(data.history && Array.isArray(data.history)) state.history = data.history;
   if(data.notes && Array.isArray(data.notes)) state.notes = data.notes;
+  if(data.savedAt) state.savedAt = data.savedAt;
 }
 
 // ---------- NOTES ----------
@@ -566,6 +588,86 @@ function renderOrder(){
   return html;
 }
 
+// ---------- STATUS TAB ----------
+function renderStatus(){
+  const tracked = state.items.filter(isTracked);
+  const asNeeded = state.items.filter(it=>!isTracked(it));
+  const allItems = [...tracked, ...asNeeded];
+
+  function statusBadge(it){
+    if(it.currentQty===null||it.currentQty===undefined) return `<span class="status-badge none">Not counted</span>`;
+    if(it.threshold===null||it.threshold===undefined) return `<span class="status-badge none">${fmtQty(it.currentQty)}</span>`;
+    if(it.currentQty <= it.threshold) return `<span class="status-badge low">⚠ ${fmtQty(it.currentQty)} — Order now</span>`;
+    const warn = it.threshold * 1.5;
+    if(it.currentQty <= warn) return `<span class="status-badge warn">↓ ${fmtQty(it.currentQty)} — Getting low</span>`;
+    return `<span class="status-badge ok">✓ ${fmtQty(it.currentQty)}</span>`;
+  }
+
+  function orderCell(it){
+    if(!isTracked(it)||it.currentQty===null||it.currentQty===undefined) return '<span style="color:var(--ink-muted)">—</span>';
+    if(!needsOrder(it)) return '<span style="color:var(--ink-muted)">—</span>';
+    return `<span class="status-order">Order ${fmtQty(orderQtyFor(it))} ${escapeHtml(it.increment)}</span>`;
+  }
+
+  function sourceCell(it){
+    const vt = it.vendorType;
+    if(vt==='morr') return 'Morr Inc. (Eric)';
+    if(vt==='internal') return 'Plant Nerd (Amy)';
+    if(it.howToOrder) return escapeHtml(it.howToOrder.length>40 ? it.howToOrder.slice(0,38)+'…' : it.howToOrder);
+    return '—';
+  }
+
+  function tsCell(it){
+    if(!it.lastCounted) return '<span class="status-ts">Never counted</span>';
+    const d = new Date(it.lastCounted);
+    const date = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    const time = d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+    return `<span class="status-ts">${date} ${time}</span>`;
+  }
+
+  const belowPar = tracked.filter(needsOrder).length;
+  const uncounted = tracked.filter(it=>it.currentQty===null||it.currentQty===undefined).length;
+
+  let html = `
+  <div class="page-head">
+    <div><h2>Inventory Status</h2>
+    <p>Current counts vs. par levels. Last saved: ${state.savedAt ? new Date(state.savedAt).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}) : 'unknown'}.</p></div>
+  </div>
+  <div class="stat-row">
+    <div class="stat crit"><span class="num mono">${belowPar}</span><span class="label">Below par — order now</span></div>
+    <div class="stat"><span class="num mono">${uncounted}</span><span class="label">Not yet counted</span></div>
+    <div class="stat"><span class="num mono">${tracked.length - belowPar - uncounted}</span><span class="label">Stocked OK</span></div>
+  </div>
+  <div class="table-wrap">
+    <table class="status-table">
+      <thead><tr>
+        <th>Item</th>
+        <th>Status / Count</th>
+        <th>Par</th>
+        <th>To Order</th>
+        <th>Source</th>
+        <th>Last Counted</th>
+      </tr></thead>
+      <tbody>`;
+
+  allItems.forEach(it=>{
+    html += `<tr>
+      <td>
+        <div class="status-item-name">${escapeHtml(it.item)}</div>
+        <div class="status-item-sub">${escapeHtml(it.increment)}${it.itemNumber?' · #'+escapeHtml(it.itemNumber):''}</div>
+      </td>
+      <td>${statusBadge(it)}</td>
+      <td class="mono" style="white-space:nowrap">${it.threshold!==null&&it.threshold!==undefined?fmtQty(it.threshold):'—'}</td>
+      <td>${orderCell(it)}</td>
+      <td class="status-source">${sourceCell(it)}</td>
+      <td>${tsCell(it)}</td>
+    </tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+  return html;
+}
+
 // ---------- HISTORY TAB ----------
 function renderHistory(){
   let html = `<div class="page-head"><div><h2>History</h2><p>Every saved count, order marked as sent, and note Brendan's added, most recent first.</p></div></div>`;
@@ -647,6 +749,7 @@ function render(){
   const app = document.getElementById('app');
   let body = '';
   if(activeTab==='count') body = renderCount();
+  else if(activeTab==='status') body = renderStatus();
   else if(activeTab==='order') body = renderOrder();
   else if(activeTab==='history') body = renderHistory();
   else if(activeTab==='setup') body = renderSetup();
@@ -661,6 +764,7 @@ function render(){
         </div>
         <div class="tabs">
           <button class="tab-btn ${activeTab==='count'?'active':''}" onclick="App.setTab('count')">Count</button>
+          <button class="tab-btn ${activeTab==='status'?'active':''}" onclick="App.setTab('status')">Status</button>
           <button class="tab-btn ${activeTab==='order'?'active':''}" onclick="App.setTab('order')">Order List</button>
           <button class="tab-btn ${activeTab==='history'?'active':''}" onclick="App.setTab('history')">History</button>
           <button class="tab-btn ${activeTab==='setup'?'active':''}" onclick="App.setTab('setup')">Item Setup</button>
