@@ -651,7 +651,7 @@ function render(){
   else if(activeTab==='history') body = renderHistory();
   else if(activeTab==='setup') body = renderSetup();
 
-  const saveDisabled = !dirty || !dbReady;
+  const saveDisabled = !dirty;
   app.innerHTML = `
     <div class="topbar">
       <div class="topbar-inner">
@@ -692,9 +692,7 @@ const App = {
     it.dirty = true;
     dirty = true;
     saveMsg='';
-    document.querySelector('.save-status').textContent = 'Unsaved changes';
-    const btn = document.querySelector('.btn-primary');
-    if(btn) btn.disabled = !dbReady;
+    render();
   },
   stepQty(id, delta){
     const it = findItem(id);
