@@ -470,7 +470,7 @@ function renderCount(){
         <div class="count-row">
           <div class="stepper">
             <button type="button" onclick="App.stepQty('${it.id}',${-(it.step||1)})">−</button>
-            <input class="qty-input" type="text" inputmode="decimal" value="${it.currentQty===null||it.currentQty===undefined?'':it.currentQty}" placeholder="—" oninput="this.value=this.value.replace(/,/g,'.').replace(/[^0-9.]/g,'').replace(/(\..*)\./g,'$1'); App.setQty('${it.id}', this.value)">
+            <input class="qty-input" type="text" inputmode="decimal" value="${it.currentQty===null||it.currentQty===undefined?'':it.currentQty}" placeholder="—" oninput="(function(el){var v=el.value,s=v.replace(/,/g,'.').replace(/[^0-9.]/g,'').replace(/(\..*)\./g,'$1');if(s!==v)el.value=s;App.setQty('${it.id}',el.value);})(this)">
             <button type="button" onclick="App.stepQty('${it.id}',${it.step||1})">+</button>
           </div>
           <span class="qty-unit">${escapeHtml(it.increment)}</span>
