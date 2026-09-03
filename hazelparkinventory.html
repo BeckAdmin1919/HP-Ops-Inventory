@@ -329,6 +329,7 @@ let activeTab = 'count';
 let dirty = false;
 let searchQ = '';
 let saveMsg = '';
+const rawInputs = {}; // preserves raw typed string per item id so re-renders don't lose trailing dots
 const SUPABASE_URL = 'https://hnnihdrbzmxhpmaciamk.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhubmloZHJiem14aHBtYWNpYW1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyMDM0NTYsImV4cCI6MjEwMzc3OTQ1Nn0.sgzUM7Pq97AXqKvOlt-Fqa5pPDPj-Fwy4IqPQ1M-Krk';
 let sbClient = null;
@@ -470,7 +471,7 @@ function renderCount(){
         <div class="count-row">
           <div class="stepper">
             <button type="button" onclick="App.stepQty('${it.id}',${-(it.step||1)})">−</button>
-            <input class="qty-input" type="text" inputmode="decimal" value="${it.currentQty===null||it.currentQty===undefined?'':it.currentQty}" placeholder="—" oninput="App.setQty('${it.id}', this.value)" onblur="(function(el){var v=el.value,s=v.replace(/,/g,'.').replace(/[^0-9.]/g,'').replace(/(\..*)\./g,'$1');if(s!==v){el.value=s;App.setQty('${it.id}',s);}})(this)">
+            <input class="qty-input" type="text" inputmode="decimal" value="${rawInputs[it.id]!==undefined ? rawInputs[it.id] : (it.currentQty===null||it.currentQty===undefined?'':it.currentQty)}" placeholder="—" oninput="App.setQty('${it.id}', this.value)" onblur="delete rawInputs['${it.id}']">
             <button type="button" onclick="App.stepQty('${it.id}',${it.step||1})">+</button>
           </div>
           <span class="qty-unit">${escapeHtml(it.increment)}</span>
@@ -797,9 +798,11 @@ const App = {
   setTab(t){ activeTab=t; searchQ=''; render(); },
   setSearch(v){ searchQ=v; render(); const s=document.querySelector('.search'); if(s){s.focus();s.setSelectionRange(v.length,v.length);} },
   setQty(id, v){
+    rawInputs[id] = v; // always keep the raw string so re-renders don't collapse "3." → "3"
     const it = findItem(id);
     if(!it) return;
-    it.currentQty = v===''? null : parseFloat(v);
+    const parsed = parseFloat(v);
+    it.currentQty = v==='' ? null : (isNaN(parsed) ? it.currentQty : parsed);
     it.dirty = true;
     dirty = true;
     saveMsg='';
@@ -810,6 +813,7 @@ const App = {
     if(ss) ss.textContent = 'Unsaved changes';
   },
   stepQty(id, delta){
+    delete rawInputs[id]; // clear raw string so the stepped value displays cleanly
     const it = findItem(id);
     if(!it) return;
     const cur = (it.currentQty===null||it.currentQty===undefined) ? 0 : it.currentQty;
