@@ -474,7 +474,6 @@ function renderCount(){
             <input class="qty-input" type="text" inputmode="decimal" value="${rawInputs[it.id]!==undefined ? rawInputs[it.id] : (it.currentQty===null||it.currentQty===undefined?'':it.currentQty)}" placeholder="—" oninput="App.setQty('${it.id}', this.value)" onblur="delete rawInputs['${it.id}']">
             <button type="button" onclick="App.stepQty('${it.id}',${it.step||1})">+</button>
           </div>
-          <span class="qty-unit">${escapeHtml(it.increment)}</span>
           ${it.caseSize && it.currentQty!==null && it.currentQty!==undefined ? `<span class="par-note" style="color:var(--warn)">= ${Math.ceil(it.currentQty/it.caseSize)} ${it.caseUnit||'case(s)'} to order</span>` : `<span class="par-note">${escapeHtml(it.parNote||'not tracked')}</span>`}
         </div>
         ${it.lastCounted ? `<div class="last-counted">Last counted ${new Date(it.lastCounted).toLocaleDateString()}</div>`:''}
