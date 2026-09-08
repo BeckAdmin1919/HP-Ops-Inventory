@@ -242,8 +242,11 @@ textarea.list-out{
 .status-table{ width:100%; border-collapse:collapse; font-size:13px; }
 .status-table th{
   text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em;
-  color:var(--ink-muted); font-weight:700; padding:8px 10px; border-bottom:2px solid var(--line);
+  color:var(--ink-muted); font-weight:700; padding:8px 10px;
   white-space:nowrap;
+  position:sticky; top:var(--topbar-h,65px); z-index:5;
+  background:var(--surface);
+  box-shadow:0 2px 0 var(--line);
 }
 .status-table td{ padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:middle; }
 .status-table tr:last-child td{ border-bottom:none; }
@@ -328,6 +331,8 @@ function catLabel(c){
 
 let state = JSON.parse(document.getElementById('state-data').textContent);
 let activeTab = 'count';
+const tabScroll = {};
+let pendingScrollY = null;
 let dirty = false;
 let searchQ = '';
 let saveMsg = '';
@@ -774,6 +779,8 @@ function renderSetup(){
 
 function render(){
   const app = document.getElementById('app');
+  const restoreY = pendingScrollY !== null ? pendingScrollY : window.scrollY;
+  pendingScrollY = null;
   let body = '';
   if(activeTab==='count') body = renderCount();
   else if(activeTab==='status') body = renderStatus();
@@ -808,13 +815,18 @@ function render(){
       </div>
     </div>
   `;
+  // Set topbar height CSS variable for sticky table headers
+  const tb = document.querySelector('.topbar');
+  if(tb) document.documentElement.style.setProperty('--topbar-h', tb.offsetHeight+'px');
+  // Restore scroll position
+  window.scrollTo(0, restoreY);
 }
 
 // ---------- STATE MUTATIONS ----------
 function findItem(id){ return state.items.find(i=>i.id===id); }
 
 const App = {
-  setTab(t){ activeTab=t; searchQ=''; render(); },
+  setTab(t){ tabScroll[activeTab]=window.scrollY; pendingScrollY=tabScroll[t]||0; activeTab=t; searchQ=''; render(); },
   setSearch(v){ searchQ=v; render(); const s=document.querySelector('.search'); if(s){s.focus();s.setSelectionRange(v.length,v.length);} },
   clearRaw(id){ delete rawInputs[id]; },
   setQty(id, v){
