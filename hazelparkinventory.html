@@ -342,12 +342,23 @@ function fmtQty(n){
   const r = Math.round(n*100)/100;
   return (r % 1 === 0) ? String(r) : String(r);
 }
+function unitLabel(inc){
+  if(!inc) return '';
+  return inc
+    .replace(/^count\s+number\s+of(\s+individual)?/i,'')
+    .replace(/^count\s+in\s+number\s+of/i,'')
+    .replace(/^count\s+in\s+/i,'')
+    .replace(/^count\s+full\s+/i,'')
+    .replace(/\s*\(enter[^)]*\)/gi,'')
+    .replace(/\s+only\s*$/i,'')
+    .trim();
+}
 function round2(n){ return Math.round(n*100)/100; }
 
 function orderQtyFor(it){
   if(it.threshold===null || it.target===null || it.threshold===undefined || it.target===undefined) return null;
   if(it.currentQty===null || it.currentQty===undefined) return null;
-  if(it.currentQty < it.threshold){
+  if(it.currentQty <= it.threshold){
     return Math.max(0, round2(it.target - it.currentQty));
   }
   return 0;
@@ -355,6 +366,12 @@ function orderQtyFor(it){
 function needsOrder(it){
   const q = orderQtyFor(it);
   return q !== null && q > 0;
+}
+function orderQtyDisplay(it){
+  const raw = orderQtyFor(it);
+  if(raw === null || raw === 0) return raw;
+  const step = it.step || 1;
+  return Math.round(Math.ceil(raw / step) * step * 100) / 100;
 }
 function isTracked(it){
   return it.threshold !== null && it.threshold !== undefined && it.target !== null && it.target !== undefined;
@@ -616,7 +633,7 @@ function renderStatus(){
   function orderCell(it){
     if(!isTracked(it)||it.currentQty===null||it.currentQty===undefined) return '<span style="color:var(--ink-muted)">—</span>';
     if(!needsOrder(it)) return '<span style="color:var(--ink-muted)">—</span>';
-    return `<span class="status-order">Order ${fmtQty(orderQtyFor(it))} ${escapeHtml(it.increment)}</span>`;
+    return `<span class="status-order">Order ${fmtQty(orderQtyDisplay(it))} × ${escapeHtml(unitLabel(it.increment))}</span>`;
   }
 
   function sourceCell(it){
